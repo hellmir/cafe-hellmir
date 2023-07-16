@@ -30,7 +30,7 @@ public class Customer {
 
         Menu menu = new Menu(CoffeeName.valueOf(coffeeName), CoffeeSize.valueOf(coffeeSize), isIced.equals("아이스"));
 
-        System.out.printf("%s: '%s %s 한 잔 %s로 주세요.'\n"
+        System.out.printf("%s : '%s %s 한 잔 %s(으)로 주세요.'\n"
                 , name, menu.getCoffeeSize(), menu.getCoffeeName().getKoreanName(), menu.isIced() ? "아이스" : "핫");
 
         payWallet(menu.getPrice());

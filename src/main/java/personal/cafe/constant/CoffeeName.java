@@ -14,7 +14,7 @@ public enum CoffeeName {
 
     }
 
-    public int getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
