@@ -2,8 +2,8 @@ package main.java.personal.cafe.entity;
 
 public class Wallet {
 
-    String name = "지갑";
-    Integer chargedMoney;
+    private String name = "지갑";
+    private Integer chargedMoney;
 
     public Wallet(Integer chargedMoney) {
         this.chargedMoney = chargedMoney;
@@ -28,4 +28,5 @@ public class Wallet {
     public Integer getChargedMoney() {
         return chargedMoney;
     }
+
 }

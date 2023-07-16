@@ -2,7 +2,7 @@ package main.java.personal.cafe.entity;
 
 public class Barista {
 
-    String name;
+    private String name;
 
     public Barista(String name) {
         this.name = name;
