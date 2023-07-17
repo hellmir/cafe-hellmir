@@ -10,7 +10,7 @@ public class Menu {
     private CoffeeSize coffeeSize;
     private Boolean isIced;
 
-    public Menu(CoffeeName coffeeName, CoffeeSize coffeeSize, Boolean isIced) {
+    private Menu(CoffeeName coffeeName, CoffeeSize coffeeSize, Boolean isIced) {
 
         this.coffeeName = coffeeName;
         price = coffeeName.getPrice();
@@ -20,6 +20,10 @@ public class Menu {
 
         this.isIced = isIced;
 
+    }
+
+    public static Menu createMenu(CoffeeName coffeeName, CoffeeSize coffeeSize, Boolean isIced) {
+        return new Menu(coffeeName, coffeeSize, isIced);
     }
 
     public CoffeeName getCoffeeName() {

@@ -9,12 +9,16 @@ public class Coffee {
     CoffeeSize coffeeSize;
     Boolean isIced;
 
-    public Coffee(CoffeeName coffeeName, CoffeeSize coffeeSize, Boolean isIced) {
+    private Coffee(CoffeeName coffeeName, CoffeeSize coffeeSize, Boolean isIced) {
 
         this.coffeeName = coffeeName;
         this.coffeeSize = coffeeSize;
         this.isIced = isIced;
 
+    }
+
+    public static Coffee createCoffee(CoffeeName coffeeName, CoffeeSize coffeeSize, Boolean isIced) {
+        return new Coffee(coffeeName, coffeeSize, isIced);
     }
 
 }

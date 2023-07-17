@@ -10,11 +10,20 @@ public class CafeApplication {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        try (Scanner sc = new Scanner(System.in)) {
 
-        Customer customer = new Customer(sc.next(), new Wallet(0));
+            String customerName = sc.next();
+            Customer customer = new Customer(customerName, Wallet.createWallet());
 
-        customer.orderCoffee(sc.nextInt(), new Barista(sc.next()), sc.next(), sc.next(), sc.next());
+            Integer moneyToCharge = sc.nextInt(); // moneyToCharge > 0
+            String baristaName = sc.next();
+            String coffeeName = sc.next(); // coffeeName = "AMERICANO" | "LATTE"
+            String coffeeSize = sc.next(); // coffeeSize = "SHORT" | "TALL" | "GRANDE" | "VENTI"
+            String iceOption = sc.next(); // iceOption = "ICE" | "HOT"
+
+            customer.orderCoffee(moneyToCharge, new Barista(baristaName), coffeeName, coffeeSize, iceOption);
+
+        }
 
     }
 
