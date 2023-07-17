@@ -17,8 +17,8 @@ public class CafeApplication {
 
             Integer moneyToCharge = sc.nextInt(); // moneyToCharge > 0
             String baristaName = sc.next();
-            String coffeeName = sc.next(); // coffeeName = "AMERICANO" | "LATTE"
-            String coffeeSize = sc.next(); // coffeeSize = "SHORT" | "TALL" | "GRANDE" | "VENTI"
+            String coffeeName = sc.next(); // coffeeName = "AMERICANO" | "CAFFE_LATTE"
+            String coffeeSize = sc.next(); // coffeeSize = "TALL" | "GRANDE" | "VENTI"
             String iceOption = sc.next(); // iceOption = "ICE" | "HOT"
 
             customer.orderCoffee(moneyToCharge, new Barista(baristaName), coffeeName, coffeeSize, iceOption);
