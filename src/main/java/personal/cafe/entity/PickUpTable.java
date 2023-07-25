@@ -1,4 +1,4 @@
-package main.java.personal.cafe.entity;
+package personal.cafe.entity;
 
 public class PickUpTable {
 

@@ -1,4 +1,4 @@
-package main.java.personal.cafe.exception;
+package personal.cafe.exception;
 
 public class InsufficientBalanceException extends RuntimeException {
 
