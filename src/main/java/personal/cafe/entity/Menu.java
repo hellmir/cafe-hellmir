@@ -1,7 +1,7 @@
-package main.java.personal.cafe.entity;
+package personal.cafe.entity;
 
-import main.java.personal.cafe.constant.CoffeeName;
-import main.java.personal.cafe.constant.CoffeeSize;
+import personal.cafe.constant.CoffeeName;
+import personal.cafe.constant.CoffeeSize;
 
 public class Menu {
 

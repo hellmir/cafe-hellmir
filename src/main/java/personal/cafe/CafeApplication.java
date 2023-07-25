@@ -1,8 +1,8 @@
-package main.java.personal.cafe;
+package personal.cafe;
 
-import main.java.personal.cafe.entity.Barista;
-import main.java.personal.cafe.entity.Customer;
-import main.java.personal.cafe.entity.Wallet;
+import personal.cafe.entity.Barista;
+import personal.cafe.entity.Customer;
+import personal.cafe.entity.Wallet;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package main.java.personal.cafe.constant;
+package personal.cafe.constant;
 
 public enum CoffeeSize {
 
