@@ -1,6 +1,6 @@
-package main.java.personal.cafe.entity;
+package personal.cafe.entity;
 
-import main.java.personal.cafe.exception.InsufficientBalanceException;
+import personal.cafe.exception.InsufficientBalanceException;
 
 public class Wallet {
 
@@ -43,4 +43,9 @@ public class Wallet {
         return new Wallet(paidMoney);
 
     }
+
+    public Integer getChargedMoney() {
+        return chargedMoney;
+    }
+
 }

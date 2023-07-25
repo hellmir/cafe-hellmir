@@ -1,7 +1,7 @@
-package main.java.personal.cafe.validation;
+package personal.cafe.validation;
 
-import main.java.personal.cafe.constant.CoffeeName;
-import main.java.personal.cafe.constant.CoffeeSize;
+import personal.cafe.constant.CoffeeName;
+import personal.cafe.constant.CoffeeSize;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,7 +54,7 @@ public class CoffeeInputFormatValidator {
 
         coffeeOptionList = new ArrayList<>();
 
-        if (iceOption.equals("ICE") || iceOption.equals("HOT")) {
+        if (iceOption != null && (iceOption.equals("ICE") || iceOption.equals("HOT"))) {
             return true;
         }
 

@@ -1,8 +1,8 @@
-package main.java.personal.cafe.entity;
+package personal.cafe.entity;
 
-import main.java.personal.cafe.constant.CoffeeName;
-import main.java.personal.cafe.constant.CoffeeSize;
-import main.java.personal.cafe.handler.CoffeeInputValidationHandler;
+import personal.cafe.constant.CoffeeName;
+import personal.cafe.constant.CoffeeSize;
+import personal.cafe.handler.CoffeeInputValidationHandler;
 
 public class Customer {
 
@@ -39,4 +39,11 @@ public class Customer {
 
     }
 
+    public Wallet getWallet() {
+        return wallet;
+    }
+
+    public Coffee getCoffee() {
+        return coffee;
+    }
 }

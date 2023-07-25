@@ -1,13 +1,13 @@
-package main.java.personal.cafe.entity;
+package personal.cafe.entity;
 
-import main.java.personal.cafe.constant.CoffeeName;
-import main.java.personal.cafe.constant.CoffeeSize;
+import personal.cafe.constant.CoffeeName;
+import personal.cafe.constant.CoffeeSize;
 
 public class Coffee {
 
-    CoffeeName coffeeName;
-    CoffeeSize coffeeSize;
-    Boolean isIced;
+    private CoffeeName coffeeName;
+    private CoffeeSize coffeeSize;
+    private Boolean isIced;
 
     private Coffee(CoffeeName coffeeName, CoffeeSize coffeeSize, Boolean isIced) {
 
@@ -19,6 +19,18 @@ public class Coffee {
 
     public static Coffee createCoffee(CoffeeName coffeeName, CoffeeSize coffeeSize, Boolean isIced) {
         return new Coffee(coffeeName, coffeeSize, isIced);
+    }
+
+    public CoffeeName getCoffeeName() {
+        return coffeeName;
+    }
+
+    public CoffeeSize getCoffeeSize() {
+        return coffeeSize;
+    }
+
+    public Boolean isIced() {
+        return isIced;
     }
 
 }
