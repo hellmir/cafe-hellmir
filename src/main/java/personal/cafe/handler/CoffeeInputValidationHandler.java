@@ -1,10 +1,10 @@
-package main.java.personal.cafe.handler;
+package personal.cafe.handler;
 
-import main.java.personal.cafe.validation.CoffeeInputFormatValidator;
+import personal.cafe.validation.CoffeeInputFormatValidator;
 
 public class CoffeeInputValidationHandler {
 
-    CoffeeInputFormatValidator coffeeInputFormatValidator = new CoffeeInputFormatValidator();
+    private CoffeeInputFormatValidator coffeeInputFormatValidator = new CoffeeInputFormatValidator();
 
     public void validateCoffeeInputFormat(String coffeeName, String coffeeSize, String iceOption) {
 
