@@ -1,9 +1,5 @@
 package personal.cafe.entity;
 
-import personal.cafe.constant.CoffeeName;
-import personal.cafe.constant.CoffeeSize;
-import personal.cafe.handler.CoffeeInputValidationHandler;
-
 public class Customer {
 
     private String name;
@@ -17,14 +13,9 @@ public class Customer {
 
     }
 
-    public void orderCoffee(Integer money, Barista barista, String coffeeName, String coffeeSize, String iceOption) {
+    public void orderCoffee(Integer money, Barista barista, Menu menu) {
 
         wallet = wallet.chargeMoney(money);
-
-        new CoffeeInputValidationHandler().validateCoffeeInputFormat(coffeeName, coffeeSize, iceOption);
-
-        Menu menu = Menu.createMenu
-                (CoffeeName.valueOf(coffeeName), CoffeeSize.valueOf(coffeeSize), iceOption.equals("ICE"));
 
         System.out.printf("%s : '%s %s 한 잔 %s(으)로 주세요.'\n"
                 , name, menu.getCoffeeSize(), menu.getCoffeeName().getKoreanName(), menu.isIced() ? "아이스" : "핫");
