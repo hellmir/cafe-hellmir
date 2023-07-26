@@ -37,7 +37,7 @@ public class Wallet {
 
         if (paidMoney <= 3_000) {
             System.out.printf("%s : '%s 고객님의 잔액이 %d원입니다. 계속 사용하시려면 금액을 충전해야 합니다.'\n"
-                    , this.name, name, chargedMoney);
+                    , this.name, name, paidMoney);
         }
 
         return new Wallet(paidMoney);
