@@ -1,5 +1,6 @@
 package personal.cafe.handler;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import personal.cafe.validation.CoffeeInputFormatValidator;
@@ -14,6 +15,7 @@ import static org.mockito.Mockito.when;
 
 public class CoffeeInputValidationHandlerTest {
 
+    @DisplayName("올바른 커피 형식이 입력되면 예외가 발생하지 않는다.")
     @ParameterizedTest
     @CsvSource({
             "AMERICANO, TALL, ICE",
@@ -22,13 +24,16 @@ public class CoffeeInputValidationHandlerTest {
     })
     void validateCoffeeInputFormatWithValidCoffeeOptions(String coffeeName, String coffeeSize, String iceOption) {
 
+        // given
         CoffeeInputValidationHandler coffeeInputValidationHandler = new CoffeeInputValidationHandler();
 
+        // when-then
         assertDoesNotThrow(() -> coffeeInputValidationHandler.validateCoffeeInputFormat(
                 coffeeName, coffeeSize, iceOption));
 
     }
 
+    @DisplayName("올바른 커피 이름이 입력되지 않으면 IllegalArgumentException이 발생한다.")
     @ParameterizedTest
     @CsvSource({
             ", TALL, ICE",
@@ -37,6 +42,7 @@ public class CoffeeInputValidationHandlerTest {
     })
     void validateCoffeeInputFormatWithInvalidCoffeeName(String coffeeName, String coffeeSize, String iceOption) {
 
+        // given
         CoffeeInputValidationHandler coffeeInputValidationHandler = new CoffeeInputValidationHandler();
 
         CoffeeInputFormatValidator coffeeInputFormatValidator = mock(CoffeeInputFormatValidator.class);
@@ -45,6 +51,7 @@ public class CoffeeInputValidationHandlerTest {
 
         when(coffeeInputFormatValidator.getCoffeeOptionList()).thenReturn(expectedOptions);
 
+        // when-then
         assertThatThrownBy(() -> coffeeInputValidationHandler.validateCoffeeInputFormat
                 (coffeeName, coffeeSize, iceOption))
                 .isInstanceOf(IllegalArgumentException.class)
@@ -53,6 +60,7 @@ public class CoffeeInputValidationHandlerTest {
 
     }
 
+    @DisplayName("올바른 커피 크기가 입력되지 않으면 IllegalArgumentException이 발생한다.")
     @ParameterizedTest
     @CsvSource({
             "AMERICANO, , ICE",
@@ -61,6 +69,7 @@ public class CoffeeInputValidationHandlerTest {
     })
     void validateCoffeeInputFormatWithInvalidCoffeeSize(String coffeeName, String coffeeSize, String iceOption) {
 
+        // given
         CoffeeInputValidationHandler coffeeInputValidationHandler = new CoffeeInputValidationHandler();
 
         CoffeeInputFormatValidator coffeeInputFormatValidator = mock(CoffeeInputFormatValidator.class);
@@ -69,6 +78,7 @@ public class CoffeeInputValidationHandlerTest {
 
         when(coffeeInputFormatValidator.getCoffeeOptionList()).thenReturn(expectedOptions);
 
+        // when-then
         assertThatThrownBy(() -> coffeeInputValidationHandler.validateCoffeeInputFormat
                 (coffeeName, coffeeSize, iceOption))
                 .isInstanceOf(IllegalArgumentException.class)
@@ -77,6 +87,7 @@ public class CoffeeInputValidationHandlerTest {
 
     }
 
+    @DisplayName("올바른 얼음 옵션이 입력되지 않으면 IllegalArgumentException이 발생한다.")
     @ParameterizedTest
     @CsvSource({
             "AMERICANO, TALL, 참",
@@ -85,7 +96,7 @@ public class CoffeeInputValidationHandlerTest {
     })
     void validateCoffeeInputFormatWithInvalidIceOption(String coffeeName, String coffeeSize, String iceOption) {
 
-
+        // given
         CoffeeInputValidationHandler coffeeInputValidationHandler = new CoffeeInputValidationHandler();
 
         CoffeeInputFormatValidator coffeeInputFormatValidator = mock(CoffeeInputFormatValidator.class);
@@ -94,6 +105,7 @@ public class CoffeeInputValidationHandlerTest {
 
         when(coffeeInputFormatValidator.getCoffeeOptionList()).thenReturn(expectedOptions);
 
+        // when-then
         assertThatThrownBy(() -> coffeeInputValidationHandler.validateCoffeeInputFormat
                 (coffeeName, coffeeSize, iceOption))
                 .isInstanceOf(IllegalArgumentException.class)
