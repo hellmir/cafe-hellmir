@@ -1,8 +1,12 @@
 package personal.cafe;
 
+import personal.cafe.constant.CoffeeName;
+import personal.cafe.constant.CoffeeSize;
 import personal.cafe.entity.Barista;
 import personal.cafe.entity.Customer;
+import personal.cafe.entity.Menu;
 import personal.cafe.entity.Wallet;
+import personal.cafe.handler.CoffeeInputValidationHandler;
 
 import java.util.Scanner;
 
@@ -21,7 +25,12 @@ public class CafeApplication {
             String coffeeSize = sc.next(); // coffeeSize = "TALL" | "GRANDE" | "VENTI"
             String iceOption = sc.next(); // iceOption = "ICE" | "HOT"
 
-            customer.orderCoffee(moneyToCharge, new Barista(baristaName), coffeeName, coffeeSize, iceOption);
+            new CoffeeInputValidationHandler().validateCoffeeInputFormat(coffeeName, coffeeSize, iceOption);
+
+            Menu menu = Menu.createMenu
+                    (CoffeeName.valueOf(coffeeName), CoffeeSize.valueOf(coffeeSize), iceOption.equals("ICE"));
+
+            customer.orderCoffee(moneyToCharge, new Barista(baristaName), menu);
 
         }
 
